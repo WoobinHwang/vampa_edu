@@ -83,8 +83,6 @@
 	</table>
 </div>
 
-<a href="/board/enroll">게시판 등록</a>
-
 <script>
     $(document).ready(function(){
     	

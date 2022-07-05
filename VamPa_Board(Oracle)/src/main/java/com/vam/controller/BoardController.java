@@ -45,7 +45,8 @@ public class BoardController {
 	/* 게시판 등록 */
     @PostMapping("/enroll")
     public String boardEnrollPOST(BoardVO board, RedirectAttributes rttr) {
-        
+        System.out.println("타겟");
+    	System.out.println(rttr);
         log.info("BoardVO : " + board);
         
         bservice.enroll(board);
