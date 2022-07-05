@@ -38,5 +38,15 @@ public class BoardServiceTests {
 //        service.enroll(vo);
 //        
 //    }
+    
+    /*게시판 조회*/
+    @Test
+    public void testGETPage() {
+        
+        int bno = 6;
+        
+        log.info("" + service.getPage(bno));
+        
+    }
  
 }

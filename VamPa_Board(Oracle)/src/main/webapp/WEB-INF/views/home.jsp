@@ -8,7 +8,8 @@
 <h1>
 	Hello world!  
 </h1>
-
+<!-- <a href="/board/enroll" >게시판 등록</a>
+<a href="/board/list" >게시글 목록</a> -->
 <P>  The time on the server is ${serverTime}. </P>
 </body>
 </html>

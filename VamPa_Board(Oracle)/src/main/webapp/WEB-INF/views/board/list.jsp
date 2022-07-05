@@ -74,13 +74,20 @@
 			<c:forEach items="${list}" var="list">
             <tr>
                 <td><c:out value="${list.bno}"/></td>
-                <td><c:out value="${list.title}"/></td>
+                <td>
+	                <a class="move" href='<c:out value="${list.bno}"/>'>
+				        <c:out value="${list.title}"/>
+				    </a>
+                </td>
                 <td><c:out value="${list.writer}"/></td>
                 <td><fmt:formatDate pattern="yyyy/MM/dd" value="${list.regdate}"/></td>
                 <td><fmt:formatDate pattern="yyyy/MM/dd" value="${list.updateDate}"/></td>
             </tr>
         </c:forEach>
+        <form id="moveForm" method="get">    
+    	</form>
 	</table>
+	
 </div>
 
 <script>
@@ -102,6 +109,20 @@
             
         }
  
+    });
+    
+    
+    let moveForm = $("#moveForm");
+    
+    $(".move").on("click", function(e){
+    	e.preventDefault();
+    	
+    	let nameEle = $("input[name=bno]")
+    	nameEle.remove();
+    	
+        moveForm.append("<input type='hidden' name='bno' value='"+ $(this).attr("href")+ "'>");
+        moveForm.attr("action", "/board/get");
+        moveForm.submit();
     });
  
 </script>

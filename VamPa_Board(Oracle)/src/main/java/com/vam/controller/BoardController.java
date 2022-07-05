@@ -56,4 +56,16 @@ public class BoardController {
         return "redirect:/board/list";
         
     }
+    
+    
+    /* 게시글 상세조회 */
+    /* GET요청은 페이지 이동이 거듭되는동안 이전 페이지들의 요청정보를 기억하고있어야한다. */
+	/* URL에 파라미터가 누적되어 전달되는데 이런 기법을 URL Rewrite처리라고 한다. */
+    @GetMapping("/get")
+    public void boardGetPageGET(int bno, Model model) {
+        
+    	
+        model.addAttribute("pageInfo", bservice.getPage(bno));
+        
+    }
 }

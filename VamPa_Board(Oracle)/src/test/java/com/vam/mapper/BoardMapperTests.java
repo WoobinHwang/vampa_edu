@@ -49,6 +49,16 @@ public class BoardMapperTests {
          
      }
      
+     /* 게시판 조회 */
+     @Test
+    public void testGetPage() {
+        
+        /* 실제 존재하는 페이지 */
+        int bno = 4;
+        
+        log.info("" + mapper.getPage(bno));
+        
+    }
      
  
 }
