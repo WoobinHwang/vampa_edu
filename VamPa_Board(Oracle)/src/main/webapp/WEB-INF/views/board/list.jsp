@@ -101,10 +101,10 @@
             
             if(result === ''){
                 return;
-            }
-            
-            if(result === "enrol success"){
+            } else if(result === "enroll success"){
                 alert("등록이 완료되었습니다.");
+            } else if(result === "modify success"){
+                alert("수정이 완료되었습니다.");
             }
             
         }

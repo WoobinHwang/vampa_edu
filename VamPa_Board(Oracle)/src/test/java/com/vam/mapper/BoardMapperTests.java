@@ -1,7 +1,5 @@
 package com.vam.mapper;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
-
 import java.util.List;
 
 import org.junit.Test;
@@ -51,14 +49,31 @@ public class BoardMapperTests {
      
      /* 게시판 조회 */
      @Test
-    public void testGetPage() {
+     public void testGetPage() {
         
-        /* 실제 존재하는 페이지 */
-        int bno = 4;
+         /* 실제 존재하는 페이지 */
+         int bno = 4;
         
-        log.info("" + mapper.getPage(bno));
+         log.info("" + mapper.getPage(bno));
         
-    }
+     }
      
+     @Test
+     public void testModify() {
+    	 // 3가지 과정 ( 준비, 실행, 리턴활용)
+    	 // given, when, then
+    	 // 1. 이미 있는 데이터를 준비하고
+    	 BoardVO board = new BoardVO();
+    	 board.setBno(6);
+    	 
+    	 // 2. 그 데이터를 다른 데이터로 변경
+    	 board.setTitle("junit에서 바꾼 제목");
+    	 board.setContent("junit에서 바꾼 내용");
+    	 
+    	 int result = mapper.modify(board);
+    	 
+    	 // 3. 변경된 결과 활용
+    	 log.info("junit 결과 : " + result);
+     }
  
 }
