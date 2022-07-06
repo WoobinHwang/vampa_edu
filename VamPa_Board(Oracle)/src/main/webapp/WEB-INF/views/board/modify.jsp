@@ -57,7 +57,7 @@
 </style>
 </head>
 <body>
-	<h1>조회 페이지</h1>
+	<h1>수정 페이지</h1>
 	<form id="modifyForm" action="/board/modify" method="post">
 		<div class="input_wrap">
 			<label>게시판 번호</label> <input name="bno" readonly="readonly"
@@ -87,6 +87,7 @@
 		<div class="btn_wrap">
 			<a class="btn" id="list_btn">목록 페이지</a> 
 	        <a class="btn" id="modify_btn">수정 완료</a>
+	        <a class="btn" id="delete_btn">삭제하기</a>
 	        <a class="btn" id="cancel_btn">수정 취소</a>
 		</div>
 	</form>
@@ -118,6 +119,14 @@
         form.attr("action", "/board/get");
         form.submit();
     });   
+	
+    /* 삭제하기 버튼 */
+	$("#delete_btn").on("click", function(e){
+		form.attr("action", "/board/delete");
+		form.attr("method", "POST")
+		form.submit();
+	});
+    
 </script>
 </body>
 </html>

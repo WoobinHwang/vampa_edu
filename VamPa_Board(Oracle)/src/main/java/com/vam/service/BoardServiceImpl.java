@@ -38,6 +38,13 @@ public class BoardServiceImpl implements BoardService {
 	public int modify(BoardVO board) {
 		// TODO Auto-generated method stub
 		return mapper.modify(board);
+	}
+
+	/* 게시판 삭제 */
+	@Override
+	public int delete(int bno) {
+		// TODO Auto-generated method stub
+		return mapper.delete(bno);
 	} 
     
 }

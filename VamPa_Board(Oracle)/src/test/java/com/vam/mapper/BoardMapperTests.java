@@ -75,5 +75,14 @@ public class BoardMapperTests {
     	 // 3. 변경된 결과 활용
     	 log.info("junit 결과 : " + result);
      }
+     
+     /* 게시판 삭제 */
+     @Test
+     public void testDelete() {
+         
+         int result = mapper.delete(9);
+         log.info("result : " + result);
+         
+     }
  
 }
