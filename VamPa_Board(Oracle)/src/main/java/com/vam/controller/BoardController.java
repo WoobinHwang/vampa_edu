@@ -73,18 +73,18 @@ public class BoardController {
 	/* GET요청은 페이지 이동이 거듭되는동안 이전 페이지들의 요청정보를 기억하고있어야한다. */
 	/* URL에 파라미터가 누적되어 전달되는데 이런 기법을 URL Rewrite처리라고 한다. */
 	@GetMapping("/get")
-	public void boardGetPageGET(int bno, Model model) {
+	public void boardGetPageGET(int bno, Model model, Criteria cri) {
 
 		model.addAttribute("pageInfo", bservice.getPage(bno));
-
+		model.addAttribute("cri", cri);
 	}
 
 	/* 수정 페이지 이동 */
 	@GetMapping("/modify")
-	public void boardModifyGET(int bno, Model model) {
+	public void boardModifyGET(int bno, Model model, Criteria cri) {
 
 		model.addAttribute("pageInfo", bservice.getPage(bno));
-
+		model.addAttribute("cri", cri);
 	}
 
 	/* 글 수정 */
@@ -110,23 +110,5 @@ public class BoardController {
 		return "redirect:/board/list";
 
 	}
-
-	/*
-	 * 게시판 목록 페이지 접속(페이징 적용)
-	 * 
-	 * @GetMapping("/list") public void boardListGET(Model model, Criteria cri) {
-	 * 
-	 * log.info("boardListGET");
-	 * 
-	 * model.addAttribute("list", bservice.getListPaging(cri));
-	 * 
-	 * int total = bservice.getTotal();
-	 * 
-	 * PageMakerDTO pageMake = new PageMakerDTO(cri, total);
-	 * 
-	 * model.addAttribute("pageMaker", pageMake);
-	 * 
-	 * }
-	 */
 
 }
