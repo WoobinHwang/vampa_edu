@@ -43,7 +43,7 @@ public class Criteria {
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
-
+	
 	@Override
 	public String toString() {
 		return "Criteria [pageNum=" + pageNum + ", amount=" + amount + "]";
