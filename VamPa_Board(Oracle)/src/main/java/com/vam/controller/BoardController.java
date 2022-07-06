@@ -14,6 +14,8 @@ import com.vam.model.BoardVO;
 import com.vam.model.Criteria;
 import com.vam.service.BoardService;
 
+import lombok.Data;
+
 @Controller
 @RequestMapping("/board/*")
 public class BoardController {
