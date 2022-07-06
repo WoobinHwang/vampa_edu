@@ -54,6 +54,10 @@
 		padding-left: 80px;
 		margin-top: 50px;
 	}
+	
+	#delete_btn{
+		background-color : red;
+	}
 </style>
 </head>
 <body>
